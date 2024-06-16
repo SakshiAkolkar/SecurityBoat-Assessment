@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cart</title>
+</head>
+<body>
+<h1>Your Cart</h1>
+<ul>
+    <li th:each="cartItem : ${cartItems}">
+        <p th:text="${cartItem.foodItem.name} + ' - ' + ${cartItem.quantity} + ' x ' + ${cartItem.foodItem.price} + ' $'"></p>
+        <form th:action="@{/cart/remove}" method="post">
+            <input type="hidden" name="cartItemId" th:value="${cartItem.id}">
+            <button type="submit">Remove</button>
+        </form>
+    </li>
+</ul>
+<p>Total Price: <span th:text="${#numbers.formatDecimal(totalPrice, 2, 'POINT', 'NONE')}"></span> $</p>
+<a th:href="@{/checkout}">Checkout</a>
+</body>
+</html>

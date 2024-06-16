@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Screen Details</title>
+</head>
+<body>
+<h1 th:text="${screen.name}"></h1>
+<p>Capacity: <span th:text="${screen.capacity}"></span></p>
+<h2>Seats</h2>
+<table>
+    <tr th:each="entry : ${screen.seats.entrySet()}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value} ? 'Available' : 'Booked'"></td>
+    </tr>
+</table>
+</body>
+</html>

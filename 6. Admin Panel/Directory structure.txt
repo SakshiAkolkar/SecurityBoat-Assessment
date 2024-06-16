@@ -1,0 +1,33 @@
+admin-panel/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── adminpanel/
+│   │   │               ├── AdminPanelApplication.java
+│   │   │               ├── config/
+│   │   │               │   ├── SecurityConfig.java
+│   │   │               │   └── WebConfig.java
+│   │   │               ├── controllers/
+│   │   │               │   ├── ScreenController.java
+│   │   │               │   ├── BookingController.java
+│   │   │               │   └── MenuController.java
+│   │   │               ├── models/
+│   │   │               │   ├── Screen.java
+│   │   │               │   ├── Booking.java
+│   │   │               │   └── MenuItem.java
+│   │   │               ├── repositories/
+│   │   │               │   ├── ScreenRepository.java
+│   │   │               │   ├── BookingRepository.java
+│   │   │               │   └── MenuItemRepository.java
+│   │   │               ├── services/
+│   │   │               │   ├── ScreenService.java
+│   │   │               │   ├── BookingService.java
+│   │   │               │   └── MenuService.java
+│   │   │               └── AdminPanelApplication.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       ├── static/
+│   │       └── templates/
+└── pom.xml

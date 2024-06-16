@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie Details</title>
+</head>
+<body>
+<h1 th:text="${movie.title}"></h1>
+<p th:text="${movie.genre}"></p>
+<h2>Showtimes</h2>
+<ul>
+    <li th:each="showtime : ${movie.showtimes}">
+        <a th:href="@{/showtimes/{id}(id=${showtime.id})}" th:text="${showtime.showtime}"></a>
+    </li>
+</ul>
+</body>
+</html>

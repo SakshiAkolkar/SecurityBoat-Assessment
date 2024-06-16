@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Showtime Details</title>
+</head>
+<body>
+<h1 th:text="${showtime.movie.title}"></h1>
+<p th:text="${showtime.showtime}"></p>
+<p>Screen: <span th:text="${showtime.screen.name}"></span></p>
+<h2>Seats</h2>
+<table>
+    <tr th:each="entry : ${seats.entrySet()}">
+        <td th:text="${entry.key}"></td>
+        <td>
+            <form th:if="${entry.value}" th:action="@{/showtimes/{id}/lock(id=${showtime.id})}" method="post">
+                <input type="hidden" name="seatNumber" th:value="${entry.key}">
+                <button type="submit">Lock</button>
+            </form>
+            <span th:if="${!entry.value}">Booked/Locked</span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

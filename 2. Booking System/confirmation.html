@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Confirmation</title>
+</head>
+<body>
+<h1>Booking Confirmation</h1>
+<p>Movie: <span th:text="${booking.showtime.movie.title}"></span></p>
+<p>Showtime: <span th:text="${booking.showtime.showtime}"></span></p>
+<p>Seats: <span th:text="${booking.seatNumbers}"></span></p>
+<p>Total Price: <span th:text="${booking.totalPrice}"></span></p>
+<p>Booking Time: <span th:text="${booking.bookingTime}"></span></p>
+</body>
+</html>

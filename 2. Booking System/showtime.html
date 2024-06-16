@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Showtime Details</title>
+</head>
+<body>
+<h1 th:text="${showtime.movie.title}"></h1>
+<p th:text="${showtime.showtime}"></p>
+<h2>Seats</h2>
+<!-- Implement an interactive seating map here -->
+<form th:action="@{/book}" method="post">
+    <input type="hidden" name="showtimeId" th:value="${showtime.id}">
+    <div>
+        <label for="seatNumbers">Seat Numbers (comma separated):</label>
+        <input type="text" id="seatNumbers" name="seatNumbers">
+    </div>
+    <div>
+        <label for="totalPrice">Total Price:</label>
+        <input type="text" id="totalPrice" name="totalPrice">
+    </div>
+    <div>
+        <button type="submit">Book Tickets</button>
+    </div>
+</form>
+</body>
+</html>

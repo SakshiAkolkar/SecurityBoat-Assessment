@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Screens</title>
+</head>
+<body>
+<h1>Screens</h1>
+<ul>
+    <li th:each="screen : ${screens}">
+        <a th:href="@{/screens/{id}(id=${screen.id})}" th:text="${screen.name}"></a>
+    </li>
+</ul>
+</body>
+</html>
